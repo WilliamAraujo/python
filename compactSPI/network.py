@@ -36,6 +36,7 @@ def accepting_new_connection(sock):
 def receive_data_from_client(connection):
 	print("Waiting to receive package from client")
 	data = connection.recv(SIZE_DATA_PACKET)
+	if (data == b''):
+		return False
 	print("Received data ", data)
-	return data
 
